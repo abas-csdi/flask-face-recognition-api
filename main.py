@@ -68,6 +68,11 @@ def recognition_processing(face_encodings, known_face_encodings, ids, filenames)
 
 @app.route('/recognize', methods=['POST'])
 def recognize():
+    if not os.path.exists(training_data_file):
+        return jsonify({
+            'message': 'Learn file not found, please learn now!'
+        }), 500
+
     if 'image' not in request.files:
         return jsonify({
             'message': 'No image part in the request'
