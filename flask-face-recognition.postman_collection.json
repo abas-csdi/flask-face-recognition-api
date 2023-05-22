@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "8e7366f6-3050-4e9f-9ee1-7646c479452b",
+		"name": "flask-face-recognition",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19204359",
+		"_collection_link": "https://crimson-space-991229.postman.co/workspace/RnD~7465c1da-09b2-4fb7-a6e2-b7e4169d2b80/collection/19204359-8e7366f6-3050-4e9f-9ee1-7646c479452b?action=share&creator=19204359&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "manage",
+			"item": [
+				{
+					"name": "List All Train Data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/all_training_data",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"all_training_data"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Train Data by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/get_training_data/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"get_training_data",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Train Data by ID & Filename",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/delete_training_data/1/jefripunza.jpg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"delete_training_data",
+								"1",
+								"jefripunza.jpg"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Upload & Train",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/jefripunza/OneDrive/Pictures/haha.jpg"
+						},
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "filename",
+							"value": "jefripunza.jpg",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/jefripunza/OneDrive/Pictures/Screenshot 2022-07-02 013236.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/recognize",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"recognize"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
